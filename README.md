@@ -13,3 +13,5 @@ from the_python_bay import tpb
 
 tpb.search("ubuntu")
 ```
+
+This will return the results in a JSON format.

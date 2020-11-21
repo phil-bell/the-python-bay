@@ -1,9 +1,0 @@
-README.md
-pyproject.toml
-setup.py
-the_python_bay/__init__.py
-the_python_bay/search.py
-the_python_bay.egg-info/PKG-INFO
-the_python_bay.egg-info/SOURCES.txt
-the_python_bay.egg-info/dependency_links.txt
-the_python_bay.egg-info/top_level.txt

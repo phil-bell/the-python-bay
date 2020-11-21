@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="the-python-bay", # Replace with your own username
-    version="1.0.2",
+    version="1.0.3",
     author="Phil Bell",
     author_email="philhabell@gmail.com",
     description="A simple package for searching thepiratebay.org",
