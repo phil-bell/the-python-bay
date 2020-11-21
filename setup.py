@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="the-python-bay", # Replace with your own username
-    version="0.0.1",
+    version="1.0.0",
     author="Phil Bell",
     author_email="philhabell@gmail.com",
     description="A simple package for searching thepiratebay.org",
@@ -15,7 +15,6 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: GNU General Public License",
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.8',

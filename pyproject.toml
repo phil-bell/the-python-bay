@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "the-python-bay"
-version = "0.1.0"
+version = "1.0.0"
 description = "A python library for searching thepiratebay.org"
 authors = ["philhabell"]
 license = "GNU General Public License"
