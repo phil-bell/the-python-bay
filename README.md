@@ -11,5 +11,5 @@ Python library for searching thepiratebay.org
 ```
 from the_python_bay import tpb
 
-tpb.search("ubunut")
+tpb.search("ubuntu")
 ```

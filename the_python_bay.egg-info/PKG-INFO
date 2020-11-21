@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: the-python-bay
-Version: 1.0.1
+Version: 1.0.2
 Summary: A simple package for searching thepiratebay.org
 Home-page: https://github.com/philhabell/the-python-bay
 Author: Phil Bell
@@ -19,7 +19,7 @@ Description: # the-python-bay
         ```
         from the_python_bay import tpb
         
-        tpb.search("ubunut")
+        tpb.search("ubuntu")
         ```
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
