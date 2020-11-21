@@ -7,8 +7,10 @@ license = "GNU General Public License"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+setuptools = "^50.3.2"
 
 [tool.poetry.dev-dependencies]
+setuptools = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

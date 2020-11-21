@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: the-python-bay
+Version: 0.0.1
+Summary: A simple package for searching thepiratebay.org
+Home-page: https://github.com/philhabell/the-python-bay
+Author: Phil Bell
+Author-email: philhabell@gmail.com
+License: UNKNOWN
+Description: # the-python-bay
+        
+        Python library for searching thepiratebay.org
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown

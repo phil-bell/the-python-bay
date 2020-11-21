@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="example-pkg-philhabell", # Replace with your own username
+    name="the-python-bay", # Replace with your own username
     version="0.0.1",
     author="Phil Bell",
     author_email="philhabell@gmail.com",
