@@ -2,3 +2,6 @@
 build
 dist
 the_python_bay.egg-info
+.vscode
+.pytest_cache
+__pycache__
