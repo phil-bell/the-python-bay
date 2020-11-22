@@ -1,3 +1,7 @@
+[![title](https://img.shields.io/pypi/v/the-python-bay.svg)](https://pypi.org/project/the-python-bay)
+[![title](https://img.shields.io/pypi/pyversions/the-python-bay.svg)](https://pypi.org/project/the-python-bay)
+
+
 # the-python-bay
 
 Python library for searching thepiratebay.org
@@ -11,7 +15,13 @@ Python library for searching thepiratebay.org
 ```
 from the_python_bay import tpb
 
-tpb.search("ubuntu")
+results = tpb.search("ubuntu")
 ```
 
-This will return the results in a JSON format.
+This will return the a list of instances of the `Torrent` class.
+
+So you can then access the data like so:
+```
+for torrent in results:
+    print(f"{torrent.name} - {torrent.magnet}")
+```
