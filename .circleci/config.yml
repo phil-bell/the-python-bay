@@ -7,6 +7,7 @@ jobs:
   build-and-test:
     executor: python/default
     steps:
+      - checkout
       - restore_cache:
           key: deps-{{ checksum "Pipfile.lock" }}
       - run:
@@ -19,8 +20,8 @@ jobs:
           paths:
             - /home/circleci/project/.poetry/virtualenvs
       - run:
-        command: pytest
-        name: Run pytest
+          command: pytest
+          name: Run pytest
 
 workflows:
   main:
