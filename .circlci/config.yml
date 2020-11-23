@@ -1,0 +1,28 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+
+jobs:
+  build-and-test:
+    executor: python/default
+    steps:
+      - restore_cache:
+          key: deps-{{ checksum "Pipfile.lock" }}
+      - run:
+          command: |
+            curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+            poetry install
+          name: Poetry install 
+      - save_cache:
+          key: deps-{{ checksum "Pipfile.lock" }}
+          paths:
+            - /home/circleci/project/.poetry/virtualenvs
+      - run:
+        command: pytest
+        name: Run pytest
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
