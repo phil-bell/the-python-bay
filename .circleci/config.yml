@@ -20,7 +20,7 @@ jobs:
           paths:
             - /home/circleci/project/.poetry/virtualenvs
       - run:
-          command: pytest
+          command: poetry run pytest
           name: Run pytest
 
 workflows:
