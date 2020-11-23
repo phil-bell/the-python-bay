@@ -1,5 +1,5 @@
-[![title](https://img.shields.io/pypi/v/the-python-bay.svg)](https://pypi.org/project/the-python-bay)
-[![title](https://img.shields.io/pypi/pyversions/the-python-bay.svg)](https://pypi.org/project/the-python-bay)
+[![](https://img.shields.io/pypi/v/the-python-bay.svg)](https://pypi.org/project/the-python-bay)
+[![](https://img.shields.io/pypi/pyversions/the-python-bay.svg)](https://pypi.org/project/the-python-bay)
 
 
 
