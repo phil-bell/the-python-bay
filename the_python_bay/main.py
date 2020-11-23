@@ -1,9 +1,10 @@
 import urllib
 import requests
+from typing import List
 
 
 class Torrent:
-    def __init__(self, data):
+    def __init__(self, data) -> None:
         self._magnet = ""
         for key, value in data.items():
             setattr(self, key, value)
@@ -11,22 +12,22 @@ class Torrent:
         self.magnet = data["info_hash"]
 
     @property
-    def magnet(self):
+    def magnet(self) -> str:
         return self._magnet
 
     @magnet.setter
-    def magnet(self, value):
+    def magnet(self, value) -> None:
         self._magnet = f"magnet:?xt=urn:btih:{value}&dn={urllib.parse.quote(self.name)}{self.trackers}"
 
 
 class ThePythonBay:
-    def __init__(self):
+    def __init__(self) -> None:
         self.api_url = "https://apibay.org/"
         self.search_url = "q.php?q="
         self.sfw_filter = "&cat=100,200,300,400,600"
 
     @classmethod
-    def search(cls, search_term, sfw=False):
+    def search(cls, search_term: str, sfw=False) -> List[Torrent]:
         tpb = cls()
         res = requests.get(
             f"{tpb.api_url}{tpb.search_url}{urllib.parse.quote(search_term)}{self.sfw_filter if sfw else ''}"
@@ -34,13 +35,13 @@ class ThePythonBay:
         return [Torrent(torrent) for torrent in res.json()]
 
     @classmethod
-    def top_movies(cls):
+    def top_movies(cls) -> List[Torrent]:
         tpb = cls()
         res = requests.get(f"{tpb.api_url}precompiled/data_top100_201.json")
         return [Torrent(torrent) for torrent in res.json()]
 
     @classmethod
-    def top_tv(cls):
+    def top_tv(cls) -> List[Torrent]:
         tpb = cls()
         res = requests.get(f"{tpb.api_url}precompiled/data_top100_205.json")
         return [Torrent(torrent) for torrent in res.json()]
