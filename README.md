@@ -65,10 +65,10 @@ The `Torrent` class is the format the torrents are returned in, it has the follo
 - `username` the username of the torrents uploader
 - `status`   the users prominence status
 
-Torrent also has the property `json` that can he used to return the json/dict of the the object. It can be used more generally:
+Torrent also has the property `to_dict` that can he used to return the dict of the the object. It can be used more generally:
 ```python
 from the_python_bay import tpb
-results = tpb.search_json("ubuntu")
+results = tpb.search_dict("ubuntu")
 
 ```
 Or it can be used on a specific `Torrent` object like so:
@@ -76,10 +76,10 @@ Or it can be used on a specific `Torrent` object like so:
 from the_python_bay import tpb
 results = tpb.search("ubuntu")
 for torrent in results:
-    print(torrent.json)
+    print(torrent.to_dict)
 ```
 Or even more directly:
 ```python
 torrent = Torrent(data)
-torrent.json
+torrent.to_dict
 ```

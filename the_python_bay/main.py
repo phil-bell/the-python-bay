@@ -1,4 +1,3 @@
-import json
 import urllib
 import requests
 from typing import List
@@ -21,8 +20,8 @@ class Torrent:
         self._magnet = f"magnet:?xt=urn:btih:{value}&dn={urllib.parse.quote(self.name)}{self.trackers}"
 
     @property
-    def json(self):
-        return json.dumps({**self.__dict__, **{"magnet": self.magnet}})
+    def to_dict(self):
+        return {**self.__dict__, **{"magnet": self.magnet}}
 
 
 class ThePythonBay:
@@ -40,12 +39,12 @@ class ThePythonBay:
         return [Torrent(torrent) for torrent in res.json()]
 
     @classmethod
-    def search_json(cls, search_term: str, sfw=False) -> list:
+    def search_dict(cls, search_term: str, sfw=False) -> list:
         tpb = cls()
         res = requests.get(
             f"{tpb.api_url}{tpb.search_url}{urllib.parse.quote(search_term)}{tpb.sfw_filter if sfw else ''}"
         )
-        return [Torrent(torrent).json for torrent in res.json()]
+        return [Torrent(torrent).to_dict for torrent in res.json()]
 
     @classmethod
     def top_movies(cls) -> List[Torrent]:
