@@ -1,3 +1,4 @@
+import json
 import urllib
 import requests
 from typing import List
@@ -21,7 +22,7 @@ class Torrent:
 
     @property
     def json(self):
-        return self.__dict__
+        return json.dumps({**self.__dict__, **{"magnet": self.magnet}})
 
 
 class ThePythonBay:
