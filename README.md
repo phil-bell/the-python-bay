@@ -64,3 +64,22 @@ The `Torrent` class is the format the torrents are returned in, it has the follo
 - `seeders`  number of seeders the torrent has
 - `username` the username of the torrents uploader
 - `status`   the users prominence status
+
+Torrent also has the property `json` that can he used to return the json/dict of the the object. It can be used more generally:
+```python
+from the_python_bay import tpb
+results = tpb.search_json("ubuntu")
+
+```
+Or it can be used on a specific `Torrent` object like so:
+```python
+from the_python_bay import tpb
+results = tpb.search("ubuntu")
+for torrent in results:
+    print(torrent.json)
+```
+Or even more directly:
+```python
+torrent = Torrent(data)
+torrent.json
+```
