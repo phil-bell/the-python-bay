@@ -19,6 +19,10 @@ class Torrent:
     def magnet(self, value) -> None:
         self._magnet = f"magnet:?xt=urn:btih:{value}&dn={urllib.parse.quote(self.name)}{self.trackers}"
 
+    @property
+    def json(self):
+        return self.__dict__
+
 
 class ThePythonBay:
     def __init__(self) -> None:
@@ -30,9 +34,17 @@ class ThePythonBay:
     def search(cls, search_term: str, sfw=False) -> List[Torrent]:
         tpb = cls()
         res = requests.get(
-            f"{tpb.api_url}{tpb.search_url}{urllib.parse.quote(search_term)}{self.sfw_filter if sfw else ''}"
+            f"{tpb.api_url}{tpb.search_url}{urllib.parse.quote(search_term)}{tpb.sfw_filter if sfw else ''}"
         )
         return [Torrent(torrent) for torrent in res.json()]
+
+    @classmethod
+    def search_json(cls, search_term: str, sfw=False) -> list:
+        tpb = cls()
+        res = requests.get(
+            f"{tpb.api_url}{tpb.search_url}{urllib.parse.quote(search_term)}{tpb.sfw_filter if sfw else ''}"
+        )
+        return [Torrent(torrent).json for torrent in res.json()]
 
     @classmethod
     def top_movies(cls) -> List[Torrent]:
