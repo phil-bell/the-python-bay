@@ -7,11 +7,10 @@ class TestThePythonBay:
         results = tpb.search("ubuntu")
         assert len(results) > 1
 
-    def test_the_python_bay_search_json(self):
-        results = tpb.search_json("ubuntu")
+    def test_the_python_bay_search_dict(self):
+        results = tpb.search_dict("ubuntu")
         assert len(results) > 1
-        first = results[0]
-        first_dict = json.loads(first)
+        first_dict = results[0]
         assert "magnet" in first_dict.keys()
 
     def test_the_python_bay_top_movies(self):
